@@ -14,8 +14,11 @@ function dobbelsteen() {
   echo $worp." | ";
   return $worp;
 }
+function bereken_hoogte($f){
+    hoog=max($f);
+}
 
-for ($n=0; $n<20; $n++) {
+for ($n=0; $n<100; $n++) {
   $frequentie[dobbelsteen()]++;  
 }
 
