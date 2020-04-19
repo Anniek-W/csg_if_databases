@@ -28,7 +28,12 @@ function toon_tabel($sql,$DBverbinding) {
 /****************************
 TYP HIERONDER JOUW PHPCODE
 ****************************/
-      
+$sql = "INSERT INTO stations (plaats, beheerder) VALUES ('Groningen', 'Anniek')";      
+$sql = "SELECT * FROM stations"; 
+
+toon_tabel($sql,$DBverbinding);
+
+$sql = "DELETE FROM stations WHERE plaats='Groningen'";
 $sql = "SELECT * FROM stations"; 
 toon_tabel($sql,$DBverbinding);
 
