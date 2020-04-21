@@ -8,15 +8,15 @@ TYP HIERONDER JOUW PHPCODE
 require('database.php');
 $database = "postcode";
 $DBverbinding = mysqli_connect($servernaam, $gebruikersnaam, $wachtwoord, $database);
-$straat = "J.M.den Uylstraat";
+$straat = 'J.M.den Uylstraat';
 $plaatsnamen=array();
 echo "<h2>RESULTAAT</h2>";
-$sql = "SELECT DISTINCT(plaats) FROM postcode WHERE straat='J.M. den Uylstraat' ORDER BY plaats ASC";
+$sql = "SELECT DISTINCT(plaats) FROM postcode WHERE straat='$straat' ORDER BY plaats ASC";
 $records = mysqli_query($DBverbinding, $sql);
       
 while($record = mysqli_fetch_assoc($records)) {
-  echo $record["plaats"]."<br>";
-  array_push($plaatsnamen,$record["plaats"]);
+  //echo $record["plaats"]."<br>";
+  array_push($plaatsnamen,$record['plaats']);
 }
 
 

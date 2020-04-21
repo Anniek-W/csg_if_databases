@@ -40,8 +40,6 @@ $DBverbinding = mysqli_connect($servernaam, $gebruikersnaam, $wachtwoord, $datab
 TYP HIERONDER JOUW PHPCODE
 ****************************/
 session_start();
-$sql = "SELECT * FROM stations ORDER BY 1 DESC"; 
-toon_tabel($sql,$DBverbinding);
 
 if (isset($_POST['gebruikersnaam'])) {
     $naam=$_POST['gebruikersnaam'];
@@ -58,7 +56,7 @@ if (isset($_POST['gebruikersnaam'])) {
     }
 }
 
-mysqli_close($DBverbinding); 
+
 
 if (isset($_SESSION["user"])) {
   echo "<h1 style='color: green;'>Welkom ".$_SESSION["user"]."</h1>";
@@ -66,9 +64,11 @@ if (isset($_SESSION["user"])) {
   session_destroy();
 }
 else {
+  $sql = "SELECT * FROM stations ORDER BY 1 DESC"; 
+  toon_tabel($sql,$DBverbinding);
   toon_formulier();
 }
-
+mysqli_close($DBverbinding); 
 /****************************
 EINDE VAN JOUW PHPCODE
 ****************************/

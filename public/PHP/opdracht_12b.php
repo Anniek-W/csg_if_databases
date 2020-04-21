@@ -41,9 +41,7 @@ TYP HIERONDER JOUW PHPCODE
 ****************************/
 function toon_logout() {
   echo '<h2>Klik hier om uit te loggen</h2>
-   <form method="POST" action="">
-     <input type="submit" name="logout" value="uitloggen">
-   </form>';   
+     <a href="logout.php">Log Uit</a>'; 
 }
 
 session_start();
